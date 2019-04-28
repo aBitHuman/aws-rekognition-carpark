@@ -17,3 +17,18 @@ points = geoms.copy()
 # change geometry 
 points['geometry'] = points['geometry'].centroid
 print(points.head())
+
+#buffered Polygons
+buff = geoms.copy()
+buff['geometry'] = buff['geometry'].buffer(0.00001) #1 degree = ~111km, so buffer ~1.1m
+print(buff.head())
+
+#envelope Polygons
+elop = buff.copy()
+elop['geometry'] = elop['geometry'].envelope
+print(elop.head)
+
+#for each point, buffer by 5meters and extract a snippet of aerial photos.
+for index, row in buff.iterrows():
+   poly_bounds = row['geometry'].bounds
+   print("Polygon bounds is {0}".format(poly_bounds,))

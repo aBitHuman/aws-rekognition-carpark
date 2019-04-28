@@ -11,3 +11,11 @@ https://base.maps.vic.gov.au/wms?request=getcapabilities
 
 To identify car parks in Melbourne, we will be using the melbourne carpark web service, but will need to format into GeoJSON centroids.
 https://data.melbourne.vic.gov.au/Transport-Movement/On-street-Parking-Bays/crvt-b4kt 
+
+## Requirements
+The scripts in this repo are designed for Python 3 and require common libarys such as GeoPandas.
+You will also need to run this command in a terminal session to allow for Geopandas (fiona) to read from HTTPS services.
+```
+cd /Applications/Python\ 3.7/
+./Install\ Certificates.command
+```
